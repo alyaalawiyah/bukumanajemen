@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\KategoriBukuController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +28,7 @@ Route::middleware(['auth'])->group(function () {
 
 Route::get('/registrasi', [AuthController::class, 'showRegisterForm'])->name('registrasi.form');
 Route::post('/registrasi', [AuthController::class, 'register'])->name('registrasi');
+
+Route::get('/kategori_buku', [KategoriBukuController::class, 'index']);
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');

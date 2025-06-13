@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/buku">Jenis Buku</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/kategori_buku">Kategori Buku</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
