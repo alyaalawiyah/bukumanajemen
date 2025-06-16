@@ -27,11 +27,11 @@ class KategoriBukuController extends Controller
             'name' => 'requiered|string|max:255|unique:kategori_buku,nama_kategori',
         ]);
         // buuat kategori buku baru
-        KategoriBuku::create([
-            'nama_kategori' => $request->input('nama_kategori'),
-        ]);
+        // KategoriBuku::create([
+        //     'nama_kategori' => $request->input('nama_kategori'),
+        // ]);
 
-        return redirect()->route('kategoribuku.index')->with('success', 'kategori buku berhasil ditambahkan.');
+        // return redirect()->route('kategoribuku.index')->with('success', 'kategori buku berhasil ditambahkan.');
     }
 
     public function tampilanBukuKategori($id)

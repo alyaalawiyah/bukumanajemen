@@ -22,6 +22,15 @@ return new class extends Migration
             //Foreign key constraint
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
         });
+
+        Schema::table('bukus', function (Blueprint $table) {
+            $table->unsignedInteger('kategori_buku_id')->nullable();
+
+            $table->foreign('kategori_buku_id')
+                ->references('id')
+                ->on('kategori_buku')
+                ->onDelete('cascade');
+        });
     }
 
     /**
@@ -34,6 +43,12 @@ return new class extends Migration
         Schema::table('bukus', function (Blueprint $table) {
         $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
+
+        Schema::table('bukus', function (Blueprint $table) {
+            $table->dropForeign(['kategori_buku_id']);
+            $table->dropColumn('kategori_buku_id');
+        });
     }
+
 
 };

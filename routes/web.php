@@ -13,6 +13,10 @@ Route::get('/beranda', function () {
     return view('beranda');
 });
 
+Route::get('/', function () {
+    return view('auth.index');
+});
+
 // Route::get('/books', [BukuController::class, 'index']);
 // Route::get('/books/{nama}', [BukuController::class, 'show']);
 
