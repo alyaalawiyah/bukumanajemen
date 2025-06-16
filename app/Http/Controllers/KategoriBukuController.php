@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\KategoriBuku;
+use App\Models\Buku;
+
 
 class KategoriBukuController extends Controller
 {
@@ -35,6 +37,6 @@ class KategoriBukuController extends Controller
     public function tampilanBukuKategori($id)
     {
         $buku = Buku::where('kategori_buku_id', $id)->get();
-        return view('kategori_buku.buku', compact(''))
+        return view('kategori_buku.buku', compact('$buku'));
     }
 }
