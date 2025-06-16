@@ -15,7 +15,6 @@ class KategoriBukuSeeder extends Seeder
     {
         DB::table('kategori_buku')->insert([
             ['nama_kategori' => 'Fiksi'],
-            ['nama_kategori' => 'Non Fiksi'],
             ['nama_kategori' => 'Biografi'],
             ['nama_kategori' => 'Teknologi'],
             ['nama_kategori' => 'Sejarah'],

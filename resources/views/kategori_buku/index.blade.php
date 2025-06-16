@@ -22,12 +22,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $kategori_buku as $item )
+                            @foreach ( $kategori_buku as $kategori )
                             <tr>
                                 <td>{{ $kategori->id }}</td>
                                 <td>{{ $kategori->nama_kategori }}</td>
                                 <td>
-                                    <a href="{{ route('kategori_buku.buku', '$item->id') }}" class="btn btn-info btn-sm">Lihat</a>
+                                    <a href="{{ route('kategori_buku.buku', '$kategori->id') }}" class="btn btn-info btn-sm">Lihat</a>
                                 </td>
                             </tr>
                             @endforeach
