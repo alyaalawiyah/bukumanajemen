@@ -39,7 +39,7 @@ Route::resource('kategori_buku', KategoriBukuController::class);
 
 Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
 
-Route::get('/auth/index', UserController::class);
+Route::get('/tes-user', [UserController::class, 'index']);
 
 Route::resource('auth', UserController::class);
 
