@@ -9,15 +9,15 @@
                 <div class="card-body">
                     <h5 class="card-title">Kategori Buku</h5>
 
-                    <div class="text-end mb-3">
+                    <!-- <div class="text-end mb-3">
                         <a href="{{ route('kategori_buku.create') }}" class="btn btn-success">Tambah</a>
-                    </div>
+                    </div> -->
 
                     <table class="table table-bordered">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Kategori Buku</th>
+                                <th>Nama Kategori</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>

@@ -15,10 +15,10 @@ class KategoriBukuController extends Controller
         return view('kategori_buku.index', compact('kategori_buku'));
     }
 
-    public function create()
-    {
-        return view('kategoribuku.create');
-    }
+    // public function create()
+    // {
+    //     return view('kategori_buku.create');
+    // }
 
     public function store(Request $request)
     {
