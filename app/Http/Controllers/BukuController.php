@@ -33,7 +33,7 @@ class BukuController extends Controller
     public function create()
     {
         $kategori = KategoriBuku::all();
-        return view('users.create', compact('kategori_buku'));
+        return view('users.create', compact('kategori'));
     }
 
     public function edit($id)
