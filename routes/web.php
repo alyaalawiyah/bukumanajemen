@@ -39,6 +39,8 @@ Route::resource('kategori_buku', KategoriBukuController::class);
 
 Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
 
-// Route::resource('Auth', UserController::class);
+Route::get('/auth/index', UserController::class);
+
+Route::resource('auth', UserController::class);
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');

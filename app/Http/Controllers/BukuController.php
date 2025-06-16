@@ -32,8 +32,8 @@ class BukuController extends Controller
 
     public function create()
     {
-        $kategori = KategoriBuku::all();
-        return view('users.create', compact('kategori'));
+        $kategori_buku = KategoriBuku::all();
+        return view('users.create', compact('kategori_buku'));
     }
 
     public function edit($id)
@@ -78,7 +78,7 @@ class BukuController extends Controller
         'judul' => 'required|string',
         'penulis' => 'required|string',
         'tahun_terbit' => 'required|numeric',
-        'kategori_buku_id' => 'required|exixst:kategori_buku_id'
+        'kategori_buku_id' => 'required|exists:kategori_buku,id'
     ]);
 
     Buku::create([
