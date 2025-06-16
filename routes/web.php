@@ -31,6 +31,9 @@ Route::post('/registrasi', [AuthController::class, 'register'])->name('registras
 
 Route::get('/kategori_buku', [KategoriBukuController::class, 'index']);
 Route::resource('kategori_buku', KategoriBukuController::class);
+ HEAD
 Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
+
+Route::resource('Auth', UserController::class); 0db912d (simpan perubahan sebelum pull rebase)
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
