@@ -38,6 +38,13 @@
                         <input type="text" name="tahun_terbit" id="tahun_terbit" class="form-control" required>
                     </div>
 
+                    <div class="form-group mb-3">
+                        <label for="kategori_buku_id">Kategori Buku</label>
+                        <select name="kategori_buku_id" id="kategori-buku_id" class="form-control" required>
+                            <option value=""></option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </form>
 

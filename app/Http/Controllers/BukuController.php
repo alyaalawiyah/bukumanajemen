@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\KategoriBuku;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,8 @@ class BukuController extends Controller
 
     public function create()
     {
-        return view('users.create');
+        $kategori = KategoriBuku::all();
+        return view('users.create', compact('kategori'));
     }
 
     public function edit($id)
