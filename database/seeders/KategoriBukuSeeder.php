@@ -14,6 +14,8 @@ class KategoriBukuSeeder extends Seeder
      */
     public function run(): void
     {
+        Schema::disableForeignKeyConstraints();
+
        DB::table('kategori_buku')->truncate();
 
        Schema::enableForeignKeyConstraints();
