@@ -31,6 +31,6 @@ Route::post('/registrasi', [AuthController::class, 'register'])->name('registras
 
 Route::get('/kategori_buku', [KategoriBukuController::class, 'index']);
 Route::resource('kategori_buku', KategoriBukuController::class);
-Route::get('kategori_buku{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('ketegori_buku.buku');
+Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
