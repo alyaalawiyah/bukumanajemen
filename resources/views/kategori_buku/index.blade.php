@@ -10,9 +10,28 @@
                     <h5 class="card-title">Kategori Buku</h5>
 
                     <div class="text-end mb-3">
-                        <a href=""></a>
+                        <a href="{{ route('kategori_buku.create') }}" class="btn btn-success">Tambah</a>
                     </div>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Kategori Buku</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ( $kategori_buku as $kategori )
+                            <tr>
+                                <td>{{ $kategori->id }}</td>
+                                <td>{{ $kategori->nama_kategori }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+@endsection
