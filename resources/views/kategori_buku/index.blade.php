@@ -26,6 +26,9 @@
                             <tr>
                                 <td>{{ $kategori->id }}</td>
                                 <td>{{ $kategori->nama_kategori }}</td>
+                                <td>
+                                    <a href="{{ route('kategori.edit', '$kategori->id') }}" class="btn btn-primary btn-sm">Lihat</a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

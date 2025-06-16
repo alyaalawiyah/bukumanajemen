@@ -12,10 +12,12 @@ class KategoriBukuController extends Controller
         $kategori_buku = KategoriBuku::all(); // Ambil semua data kategori dari database
         return view('kategori_buku.index', compact('kategori_buku'));
     }
+
     public function create()
     {
         return view('kategoribuku.create');
     }
+
     public function store(Request $request)
     {
         // validasi data yang diterima
@@ -28,5 +30,11 @@ class KategoriBukuController extends Controller
         ]);
 
         return redirect()->route('kategoribuku.index')->with('success', 'kategori buku berhasil ditambahkan.');
+    }
+
+    public function tampilanBukuKategori($id)
+    {
+        $buku = Buku::where('kategori_buku_id', $id)->get();
+        return view('kategori_buku.buku', compact(''))
     }
 }
