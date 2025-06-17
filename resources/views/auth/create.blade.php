@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout/app')
 
 @section('title', 'Tambah pengguna')
 
@@ -9,12 +9,22 @@
             <div class="card-body">
                 <h5 class="card-title">Tambah pengguna</h5>
 
-                <form action="{{ route('user.store')}}" method="POST">
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('auth.store')}}" method="POST">
                     @csrf
 
                     <div class="form-group">
                         <label for="name">Nama</label>
-                        <input type="text" name="nama" id="nama" class="form-control" required>
+                        <input type="text" name="name" id="name" class="form-control" required>
                     </div>
 
                      <div class="form-group">
