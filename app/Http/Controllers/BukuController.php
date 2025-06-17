@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\KategoriBuku;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,7 +32,8 @@ class BukuController extends Controller
 
     public function create()
     {
-        return view('users.create');
+        $kategori_buku = KategoriBuku::all();
+        return view('users.create', compact('kategori_buku'));
     }
 
     public function edit($id)
@@ -76,12 +78,14 @@ class BukuController extends Controller
         'judul' => 'required|string',
         'penulis' => 'required|string',
         'tahun_terbit' => 'required|numeric',
+        'kategori_buku_id' => 'required|exists:kategori_buku,id'
     ]);
 
     Buku::create([
         'judul' => $request->judul,
         'penulis' => $request->penulis,
         'tahun_terbit' => $request->tahun_terbit,
+        'kategori_buku_id' => $request->kategori_buku_id,
         'user_id' => Auth::id(),
     ]);
 

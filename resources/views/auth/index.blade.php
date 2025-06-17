@@ -1,6 +1,6 @@
-@extends('layouts/app')
+@extends('layout.app')
 
-@section('title', 'data pengguna')
+@section('title', 'Data Pengguna')
 
 @section('content')
 <div class="row">
@@ -10,7 +10,7 @@
                 <h5 class="card-title">Data Pengguna</h5>
 
                 <div class="text-end mb-3">
-                    <a href="{{ route('user.create')}}" class="btn btn-success">Tambah</a>
+                    <a href="{{ route('users.create') }}" class="btn btn-success">Tambah</a>
                 </div>
 
                 <!-- tabel untuk menampilkan pengguna -->
@@ -27,16 +27,16 @@
                     <tbody>
                         @foreach($users as $user)
                         <tr>
-                            <td>{{ $lopp->iteration}}</td>
+                            <td>{{ $loop->iteration}}</td>
                             <td>{{ $user->name}}</td>
                             <td>{{ $user->email}}</td>
-                            <td>{{ $usesr->created_at}}</td>
+                            <td>{{ $user->created_at}}</td>
                             <td>
                                 <!-- tombol edit -->
-                                 <a href="{{ route('users.destroy', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                 <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
 
                                  <!-- tombol hapus -->
-                                  <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline:">
+                                  <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus pengguna ini?');">Hapus</button>

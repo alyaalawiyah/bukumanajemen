@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Users;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
@@ -11,5 +12,12 @@ class UserController extends Controller
     {
         $users = User::all();
         return view('auth.index', compact('users'));
+
+        return view('beranda');
+    }
+
+    public function create()
+    {
+        return view('auth.create');
     }
 }
