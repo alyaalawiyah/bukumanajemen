@@ -36,7 +36,7 @@ class KategoriBukuController extends Controller
 
     public function tampilanBukuKategori($id)
     {
-        $buku = Buku::where('kategori_buku_id', $id)->get();
-        return view('kategori_buku.buku', compact('buku'));
+        $kategori = KategoriBuku::with('bukus')->findOrFail($id);
+        return view('kategori_buku.detail', compact('kategori'));
     }
 }

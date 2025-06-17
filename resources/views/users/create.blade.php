@@ -41,8 +41,7 @@
                     <div class="form-group mb-3">
                         <label for="kategori_buku_id">Kategori Buku</label>
                         <select name="kategori_buku_id" id="kategori-buku_id" class="form-control" required>
-                            <option value="">Fiksi</option>
-                            <option value="">Non Fiksi</option>
+                            <option value=""> Pilih Kategori </option>
                             @foreach ($kategori_buku as $kategori)
                                 <option value="{{ $kategori->id }}">{{ $kategori->nama_kategori}}</option>
                             @endforeach
