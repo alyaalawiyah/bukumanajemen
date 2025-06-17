@@ -39,8 +39,8 @@ Route::get('/auth/index', [UserController::class, 'index']);
 
 Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
 
-Route::get('/tes-user', [UserController::class, 'index']);
-Route::resource('auth', UserController::class);
+// Route::get('/tes-user', [UserController::class, 'index']);
+// Route::resource('auth', UserController::class);
 Route::get('users/create', [UserController::class, 'create'])->name('user.create');
 
 Route::resource('auth', UserController::class); 
