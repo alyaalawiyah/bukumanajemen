@@ -13,15 +13,11 @@ Route::get('/beranda', function () {
     return view('beranda');
 });
 
-Route::get('/', function () {
-    return view('auth.index');
-});
-
 // Route::get('/books', [BukuController::class, 'index']);
 // Route::get('/books/{nama}', [BukuController::class, 'show']);
 
 Route::resource('buku', BukuController::class);
-Route::resource('users', BukuController::class);
+// Route::resource('/', UserController::class, 'index');
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -40,7 +36,7 @@ Route::resource('kategori_buku', KategoriBukuController::class);
 Route::get('kategori_buku/{id}/buku', [KategoriBukuController::class, 'tampilanBukuKategori'])->name('kategori_buku.buku');
 
 Route::get('/tes-user', [UserController::class, 'index']);
-
 Route::resource('auth', UserController::class);
+Route::get('users/create', [UserController::class, 'create'])->name('user.create');
 
 // Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');

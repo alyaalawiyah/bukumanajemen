@@ -12,5 +12,12 @@ class UserController extends Controller
     {
         $users = User::all();
         return view('auth.index', compact('users'));
+
+        return view('beranda');
+    }
+
+    public function create()
+    {
+        return view('auth.create');
     }
 }
