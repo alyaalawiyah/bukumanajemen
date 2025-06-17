@@ -44,23 +44,23 @@ class BukuController extends Controller
 
     public function update(Request $request, $id)
     {
-    $request->validate([
-        'judul' => 'required|string|max:255',
-        'penulis' => 'required|string|max:255',
-        'tahun_terbit' => 'required|integer',
-    ]);
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'penulis' => 'required|string|max:255',
+            'tahun_terbit' => 'required|integer',
+        ]);
 
-    // Cari Buku
-    $buku = Buku::findOrFail($id);
+        // Cari Buku
+        $buku = Buku::findOrFail($id);
 
-    // Update data
-    $buku->update([
-        'judul' => $request->judul,
-        'penulis' => $request->penulis,
-        'tahun_terbit' => $request->tahun_terbit,
-    ]);
+        // Update data
+        $buku->update([
+            'judul' => $request->judul,
+            'penulis' => $request->penulis,
+            'tahun_terbit' => $request->tahun_terbit,
+        ]);
 
-    return redirect()->route('buku.index')->with('success', 'Data buku berhasil diperbarui.');
+        return redirect()->route('buku.index')->with('success', 'Data buku berhasil diperbarui.');
     }
 
     public function destroy($id)
@@ -73,24 +73,24 @@ class BukuController extends Controller
 
     public function store(Request $request)
     {
-    
-    $request->validate([
-        'judul' => 'required|string',
-        'penulis' => 'required|string',
-        'tahun_terbit' => 'required|numeric',
-        'kategori_buku_id' => 'required|exists:kategori_buku,id'
-    ]);
+        $request->validate([
+            'judul' => 'required|string',
+            'penulis' => 'required|string',
+            'tahun_terbit' => 'required|numeric',
+            'kategori_buku_id' => 'required|exists:kategori_buku,id'
+        ]);
 
-    Buku::create([
-        'judul' => $request->judul,
-        'penulis' => $request->penulis,
-        'tahun_terbit' => $request->tahun_terbit,
-        'kategori_buku_id' => $request->kategori_buku_id,
-        'user_id' => Auth::id(),
-    ]);
+        $buku = Buku::create([ 
+            'judul' => $request->judul,
+            'penulis' => $request->penulis,
+            'tahun_terbit' => $request->tahun_terbit,
+            'kategori_buku_id' => $request->kategori_buku_id,
+            'user_id' => Auth::id(),
+        ]); 
 
-    return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan!');
+        return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan!');
     }
+
 
 }
 

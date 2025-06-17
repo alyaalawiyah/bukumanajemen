@@ -22,21 +22,17 @@ class KategoriBukuController extends Controller
 
     public function store(Request $request)
     {
-        // validasi data yang diterima
         $request->validate([
-            'name' => 'requiered|string|max:255|unique:kategori_buku,nama_kategori',
+            'nama_kategori' => 'required|string|max:255|unique:kategori_buku,nama_kategori',
         ]);
-        // buuat kategori buku baru
-        // KategoriBuku::create([
-        //     'nama_kategori' => $request->input('nama_kategori'),
-        // ]);
 
-        // return redirect()->route('kategoribuku.index')->with('success', 'kategori buku berhasil ditambahkan.');
+        return redirect()->route('buku.index')->with('success', 'Buku berhasil ditambahkan');
     }
 
     public function tampilanBukuKategori($id)
     {
-        $kategori = KategoriBuku::with('bukus')->findOrFail($id);
-        return view('kategori_buku.detail', compact('kategori'));
+        $buku = Buku::where('kategori_buku_id', $id)->get();
+        return view('kategori_buku.buku', compact('buku'));
     }
+
 }
