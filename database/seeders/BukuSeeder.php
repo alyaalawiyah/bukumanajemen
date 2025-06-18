@@ -20,5 +20,13 @@ class BukuSeeder extends Seeder
             'kategori_buku_id' => '2',
             'user_id' => $user->id,
         ]);
+
+        Buku::create([
+            'judul' => 'PHP Dasar',
+            'penulis' => 'Ilham',
+            'tahun_terbit' => '2019',
+            'kategori_buku_id' => '2',
+            'user_id' => $user->id,
+        ]);
     }   
 }
