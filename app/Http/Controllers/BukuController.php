@@ -21,6 +21,10 @@ class BukuController extends Controller
 
         $books = $query->paginate(5);
         return view('users.index', compact('books'));
+
+        $kategori_buku = KategoriBuku::where('user_id', Auth::id())->get();
+        return view('users.create', compact('kategori_buku'));
+
         
     }
 
