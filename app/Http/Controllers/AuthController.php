@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
@@ -52,6 +53,7 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
+        Session::regenerate();
         return redirect()->route('login')->with('success', 'Registrasi berhasil. Silakan login.');
     }
 }
