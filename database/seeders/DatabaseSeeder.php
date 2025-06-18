@@ -18,7 +18,13 @@ class DatabaseSeeder extends Seeder
             BukuSeeder::class,
         ]);
 
-        $this->call(KategoriBukuSeeder::class);
+        $this->call([
+            KategoriBukuSeeder::class,
+        ]);
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 
 }
