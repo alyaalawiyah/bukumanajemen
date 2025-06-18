@@ -18,7 +18,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('kategori_buku', function (Blueprint $table) {
-            //
+            $table->unignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 };
