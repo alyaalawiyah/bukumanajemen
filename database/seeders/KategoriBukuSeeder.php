@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Schema;
 
 class KategoriBukuSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
         Schema::disableForeignKeyConstraints();
