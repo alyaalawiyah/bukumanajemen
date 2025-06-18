@@ -9,9 +9,13 @@
         @if($buku->isEmpty())
             <p>Tidak ada buku dalam kategori ini.</p>
         @else
-            <ul>
+            <ul class="">
                 @foreach ($buku as $item)
-                    <li>{{ $item->judul }} - {{ $item->penulis }}</li>
+                <div class="card mt-2">
+                    <div class="card-body">
+                        {{ $item->judul }} - {{ $item->penulis }}
+                    </div>
+                </div>
                 @endforeach
             </ul>
         @endif
