@@ -12,11 +12,8 @@ class KategoriBukuController extends Controller
 {
     public function index()
     {
-        $kategori_buku = KategoriBuku::all(); // Ambil semua data kategori dari database
-        return view('kategori_buku.index', compact('kategori_buku'));
-
         $kategori_buku = KategoriBuku::where('user_id', Auth::id())->get();
-        return view('users.create', compact('kategori_buku'));
+        return view('kategori', compact('kategori_buku'));
     }
 
     // public function create()
