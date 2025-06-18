@@ -14,7 +14,7 @@
                 </div>
 
                 <!-- tabel untuk menampilkan pengguna -->
-                 <table class="table table-bordered">
+                 <table class="table table-bordered" style="table-layout: fixed; width: 100%;">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -36,16 +36,19 @@
                                  <a href="{{ route('auth.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
 
                                  <!-- tombol hapus -->
-                                  <form action="{{ route('auth.destroy', $user->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('auth.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus pengguna ini?');">Hapus</button>
-                                  </form>
+                                </form>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                  </table>
+                 <div class="mt-3">
+                    {{ $users->links()}}
+                 </div>
             </div>
         </div>
     </div>
