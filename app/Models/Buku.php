@@ -3,11 +3,21 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Buku extends Model
 {
-    // protected $table = 'tb_bukus';
-    protected $fillable = ['judul','penulis', 'tahun_terbit', 'user_id'];
+    use HasFactory;
+
+    protected $table = 'bukus';
+
+    protected $fillable = [
+        'judul',
+        'penulis', 
+        'tahun_terbit', 
+        'user_id', 
+        'kategori_buku_id'
+    ];
 
     public function user()
     {
